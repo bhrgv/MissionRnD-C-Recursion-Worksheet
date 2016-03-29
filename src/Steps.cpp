@@ -22,9 +22,19 @@
 
 */
 #include "stdafx.h"
-
-
+int getSum(int sum,int total)
+{
+	if (sum == total)
+		return 1;
+	if (sum > total)
+		return 0;
+	int c1 = getSum(sum + 1, total);
+	int c2 = getSum(sum + 2, total);
+	return c1 + c2;
+}
 int get_steps(int s)
 {
-	return 0;
+	int c1 = getSum(1, s);
+	int c2 = getSum(2, s);
+	return c1+c2;
 }
